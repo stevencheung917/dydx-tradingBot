@@ -14,13 +14,13 @@ ABORT_ALL_POSITIONS = False
 FIND_COINTEGRATED = True
 
 #Max number of markets to search
-NO_OF_MARKETS=35
+NO_OF_MARKETS=36
 
 # Manage Exits
-MANAGE_EXITS = False
+MANAGE_EXITS = True
 
 # Place Trades
-PLACE_TRADES = False
+PLACE_TRADES = True
 
 # Resolution
 RESOLUTION = "1HOUR"
