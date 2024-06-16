@@ -11,7 +11,7 @@ colorama==0.4.6
 cytoolz==0.12.3
 dateparser==1.0.0
 distlib==0.3.6
-dydx-v3-python==2.1.0
+dydx-v3-python==2.0.0
 ecdsa==0.16.0
 eth-abi==2.2.0
 eth-account==0.5.9
