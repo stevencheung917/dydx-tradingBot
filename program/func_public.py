@@ -16,7 +16,7 @@ def get_candles_recent(client, market):
     close_prices = []
 
     # Protect API
-    time.sleep(0.2)
+    time.sleep(0.7)
 
     # Get data
     candles = client.public.get_candles(
@@ -44,7 +44,7 @@ def get_candles_historical(client,market):
         from_iso =tf_obj['from_iso']
         to_iso =tf_obj['to_iso']
         
-        time.sleep(0.2)
+        time.sleep(0.5)
         
         candles=client.public.get_candles(
             market=market,
@@ -83,7 +83,7 @@ def construct_market_prices(client):
     i=0
     for market in tradeable_markets[1:NO_OF_MARKETS]:
         close_prices_add=get_candles_historical(client,market)
-        time.sleep(1)
+        time.sleep(2)
         df_add=pd.DataFrame(close_prices_add) 
         df_add.set_index("datetime",inplace=True)
         df=pd.merge(df,df_add,how="outer",on="datetime",copy=False)
