@@ -6,6 +6,7 @@ from func_private import is_open_positions
 from func_bot_agent import BotAgent
 import pandas as pd
 import json
+import time
 
 from pprint import pprint
 
@@ -47,7 +48,9 @@ def open_positions(client):
 
     # Get prices
     series_1 = get_candles_recent(client, base_market)
+    time.sleep(0.5)
     series_2 = get_candles_recent(client, quote_market)
+    time.sleep(0.5)
 
     # Get ZScore
     if len(series_1) > 0 and len(series_1) == len(series_2):
@@ -103,6 +106,7 @@ def open_positions(client):
 
             # Check account balance
             account = client.private.get_account()
+            time.sleep(0.5)
             free_collateral = float(account.data["account"]["freeCollateral"])
             print(f"Balance: {free_collateral} and minimum at {USD_MIN_COLLATERAL}")
 

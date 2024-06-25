@@ -38,7 +38,7 @@ def manage_trade_exits(client):
     markets_live.append(p["market"])
 
   # Protect API
-  time.sleep(0.5)
+  time.sleep(1.5)
 
   # Check all saved positions match order record
   # Exit trade according to any exit trade rules
@@ -58,7 +58,7 @@ def manage_trade_exits(client):
     position_side_m2 = position["order_m2_side"]
 
     # Protect API
-    time.sleep(0.5)
+    time.sleep(1.5)
 
     # Get order info m1 per exchange
     order_m1 = client.private.get_order_by_id(position["order_id_m1"])
@@ -67,7 +67,7 @@ def manage_trade_exits(client):
     order_side_m1 = order_m1.data["order"]["side"]
 
     # Protect API
-    time.sleep(0.5)
+    time.sleep(1.5)
 
     # Get order info m2 per exchange
     order_m2 = client.private.get_order_by_id(position["order_id_m2"])
@@ -87,15 +87,15 @@ def manage_trade_exits(client):
 
     # Get prices
     series_1 = get_candles_recent(client, position_market_m1)
-    time.sleep(0.2)
+    time.sleep(0.5)
     series_2 = get_candles_recent(client, position_market_m2)
-    time.sleep(0.2)
+    time.sleep(0.5)
 
     # Get markets for reference of tick size
     markets = client.public.get_markets().data
 
     # Protect API
-    time.sleep(0.2)
+    time.sleep(0.5)
 
     # Trigger close based on Z-Score
     if CLOSE_AT_ZSCORE_CROSS:

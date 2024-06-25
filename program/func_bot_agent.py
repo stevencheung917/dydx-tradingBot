@@ -147,6 +147,7 @@ class BotAgent:
 
     # Place Quote Order
     try:
+      time.sleep(0.5)
       quote_order = place_market_order(
         self.client,
         market=self.market_2,
