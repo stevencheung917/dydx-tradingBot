@@ -11,7 +11,7 @@ MODE = "PRODUCTION"
 ABORT_ALL_POSITIONS = False
 
 # Find Cointegrated Pairs
-FIND_COINTEGRATED = True
+FIND_COINTEGRATED = False
 
 #Max number of markets to search
 NO_OF_MARKETS=36
@@ -38,7 +38,7 @@ USD_MIN_COLLATERAL = 300
 CLOSE_AT_ZSCORE_CROSS = True
 
 # Ethereum Address
-Ethereum_address = "0x329A211640d933C29b9E19B8Cc03Bb7E8103B451"
+Ethereum_address = "0xF27c21AF390B5c6dA4136D9fbDbe64Bc7FA2124A"
 
 
 # KEYS - PRODUCTION
