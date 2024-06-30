@@ -6,6 +6,7 @@ from func_entry_pairs import open_positions
 from func_exit_pairs import manage_trade_exits
 from constants import ABORT_ALL_POSITIONS, FIND_COINTEGRATED, PLACE_TRADES,MANAGE_EXITS
 from func_messaging import send_message
+from datetime import datetime
 
 if __name__=="__main__":
         send_message("Little orange bot started!")
@@ -51,7 +52,8 @@ if __name__=="__main__":
         while True: 
                 if MANAGE_EXITS:
                         try:
-                                print("Managing exits...")
+                                timestamp=datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                                print(f"Managing exits...,{timestamp}")
                                 manage_trade_exits(client)
                         except Exception as e:
                                 print("Error managing exiting positions: ", e)
